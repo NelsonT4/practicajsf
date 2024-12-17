@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    
+<h:head>  
+	<title>Pantalla Restaurantes</title>
+	<h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
+</h:head>
+
+<h:body>
+		
+	<!-- ::::::::::::: AGREGA AQUI LA TABLA DE RESTAURANTES ::::::::::::::::::: -->
+	<h:dataTable id="tblRestaurante" var="restaurante" value="#{restauranteController.restaurante}" headerClass="headerTable" rowClasses="rowTable rowTableLine">
+		<h:column>
+			<f:facet name="header">Nombre</f:facet>
+			<h:outputLabel value="#{restaurante.nombre}"></h:outputLabel>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Dirección</f:facet>
+			<h:outputLabel value="#{restaurante.dirección}"></h:outputLabel>
+		</h:column>
+		<h:column>
+			<f:facet name="header">País</f:facet>
+			<h:outputLabel value="#{restaurante.país}"></h:outputLabel>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Gerente</f:facet>
+			<h:outputLabel value="#{restaurante.gerente.nombre}"></h:outputLabel>
+			<h:outputLabel value=" #{restaurante.gerente.primerApellido}"></h:outputLabel>
+			<h:outputLabel value=" #{restaurante.gerente.segundoApellido}"></h:outputLabel>
+		</h:column>
+	</h:dataTable>
+
+</h:body>
+
+</html>
